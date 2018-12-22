@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Test Vue.js</title>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div class=" group header">
+            <h1 class="head_title">{{name}}</h1>
+            <h3>Current Score is {{current_score}}</h3>
+        </div>
+        <div class="section group rounded">
+            <template v-for="(array, i) in grid">
+                <template v-for="(cell, j) in array">
+                    <div class="col span_1_of_4" v-bind:ref="'counter_'+i+'_'+ j">
+                        <span v-if="cell == 0"></span>
+                        <span v-else>{{cell}}</span>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </div>
+</body>
+
+<script src="index.js"></script>
+
+</html>
